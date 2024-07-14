@@ -33,7 +33,7 @@
 
 
 # В5 под каким номером стоит набор букв подходящий по условию задания?
-# from itertools import *
-# for i, w in enumerate(product(sorted('парус'), repeat = 3), 1):
-#     if w[0] == 'с':
-#         print(i)
+from itertools import *
+for i, w in enumerate(product(sorted('парус'), repeat = 3), 1):
+    if w[0] == 'с':
+        print(i)
