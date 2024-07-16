@@ -1,3 +1,4 @@
+# В1
 def duo(n):
     digits = '0123456789AB'
     if n < 12:
