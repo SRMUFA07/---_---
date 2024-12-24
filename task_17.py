@@ -246,12 +246,11 @@ file_array = [int(x) for x in open('17-825afe25-70a9-4e81-9a88-458f938a934b.txt'
 result = []
 
 for i in range(len(file_array) - 1):
-    for j in range(i + 1, len(file_array)):
-        first_element = file_array[i]
-        second_element = file_array[j]
+    first_element = file_array[i]
+    second_element = file_array[i + 1]
 
-        if first_element % 4 == 0 or second_element % 4 == 0:
-            if (first_element + second_element) % 7 == 0:
-                result.append(first_element + second_element)
+    if first_element % 4 == 0 or second_element % 4 == 0:
+        if (first_element + second_element) % 7 == 0:
+            result.append(first_element + second_element)
 
 print(len(result), max(result))
