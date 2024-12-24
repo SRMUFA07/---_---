@@ -75,3 +75,17 @@ print(len(A) - 1)
 #     if flag:
 #         print(A)
 #         break
+
+
+def f(x, y, A):
+    return (x + 2*y > 16) or (x + y <= A)
+for A in range (300):
+    flag = True
+    for x in range (300):
+        for y in range (300):
+            if not f(x, y, A):
+                flag = False
+                break
+    if flag:
+        print(A)
+        break

@@ -222,16 +222,36 @@
 # у которых разность элементов кратна 45 и хотя бы один из элементов кратен 18, затем максимальную из разностей элементов таких пар. 
 # В данной задаче под парой подразумевается два различных элемента последовательности. Порядок элементов в паре не важен.
 
-file_array = [int(x) for x in open('17_9.txt')]
+# file_array = [int(x) for x in open('17_9.txt')]
+# result = []
+
+# for i in range(len(file_array) - 1):
+#     for j in range(i + 1, len(file_array)):
+#         element_difference = file_array[i] - file_array[j]
+
+#         if element_difference % 45 == 0 and \
+#             (file_array[i] % 18 == 0 or file_array[j] % 18 == 0):
+#             result.append(element_difference)
+
+# print(len(result), max(result))
+
+
+# ЦУ_____________________________________________________________________________________________________________________________________
+# В файле содержится последовательность целых неотрицательных чисел, каждое из которых не превышает 10 000. Будем считать парой два идущих подряд числа последовательности. 
+# Найдите количество пар, в которых хотя бы одно из двух чисел делится на 4, а их сумма делится на 7.
+# В качестве ответа запишите два числа: количество найденных пар и максимальную сумму элементов таких пар.
+# Например, в последовательности (2 3 7 8 9) есть две подходящие пары: (2 3) и (3 7), в ответе для этой последовательности надо записать числа 2 и 10 через пробел: 2 10.
+
+file_array = [int(x) for x in open('17-825afe25-70a9-4e81-9a88-458f938a934b.txt')]
 result = []
 
 for i in range(len(file_array) - 1):
     for j in range(i + 1, len(file_array)):
-        element_difference = file_array[i] - file_array[j]
+        first_element = file_array[i]
+        second_element = file_array[j]
 
-        if element_difference % 45 == 0 and \
-            (file_array[i] % 18 == 0 or file_array[j] % 18 == 0):
-            result.append(element_difference)
+        if first_element % 4 == 0 or second_element % 4 == 0:
+            if (first_element + second_element) % 7 == 0:
+                result.append(first_element + second_element)
 
 print(len(result), max(result))
-

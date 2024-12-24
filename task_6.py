@@ -52,19 +52,40 @@
 
 
 #B3
+# from turtle import * 
+# tracer(0)
+# screensize(2000, 2000)
+# left(90)
+# scale = 25
+
+# for i in range(3):
+#     forward(7 * scale)
+#     right(90)
+# forward(8 * scale)
+# for i in range(3):
+#     left(90)
+#     forward(5 * scale)
+
+# up()
+# for x in range(-50, 50):
+#     for y in range(-50, 50):
+#         goto(x*scale, y*scale)
+#         dot('red')
+# done()
+
+
+# Повтори 7 [Вперёд 4 Направо 90 Вперёд 3 Направо 90] 
 from turtle import * 
 tracer(0)
 screensize(2000, 2000)
 left(90)
 scale = 25
 
-for i in range(3):
-    forward(7 * scale)
+for i in range(7):
+    forward(4 * scale)
     right(90)
-forward(8 * scale)
-for i in range(3):
-    left(90)
-    forward(5 * scale)
+    forward(3 * scale)
+    right(90)
 
 up()
 for x in range(-50, 50):

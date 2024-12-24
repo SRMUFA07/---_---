@@ -89,15 +89,34 @@
 # В системе счисления с основанием p выполняется равенство zxyx7 + xy836  =  wzx64. 
 # Буквами x, y, z и w обозначены некоторые цифры из алфавита системы счисления с
 # основанием p. Определите значение числа xyzwp и запишите это значение в десятичной системе счисления.
+# for p in range(1, 10): # система счисления p
+#     for x in range(1, p):
+#         for y in range (1, p):
+#             for z in range (1, p):
+#                 for w in range(1, p):
+#                     exp1 = z*p**4 + x*p**3 + y*p**2 + x*p**1 + 7 # выражение 1
+#                     exp2 = x*p**4 + y*p**3 + 8*p**2 + 3*p**1 + 6 # выражение 2
+#                     exp3 = w*p**4 + z*p**3 + x*p**2 + 6*p**1 + 4 # выражение 3
+#                     if exp1 + exp2 == exp3: # zxyx7 + xy836 = wzx64
+#                         print(x*p**3 + y*p**2 + z*p**1 + w*p**0) # xyzwp
 
 
-for p in range(1, 10): # система счисления p
-    for x in range(1, p):
-        for y in range (1, p):
-            for z in range (1, p):
-                for w in range(1, p):
-                    exp1 = z*p**4 + x*p**3 + y*p**2 + x*p**1 + 7 # выражение 1
-                    exp2 = x*p**4 + y*p**3 + 8*p**2 + 3*p**1 + 6 # выражение 2
-                    exp3 = w*p**4 + z*p**3 + x*p**2 + 6*p**1 + 4 # выражение 3
-                    if exp1 + exp2 == exp3: # zxyx7 + xy836 = wzx64
-                        print(x*p**3 + y*p**2 + z*p**1 + w*p**0) # xyzwp
+# Шаг 1: Вычисление выражения
+result = 36**7 + 6**30 - 12
+
+# Функция для перевода числа в систему счисления с основанием 6
+def to_base_6(n):
+    if n == 0:
+        return "0"
+    digits = []
+    while n:
+        digits.append(int(n % 6))
+        n //= 6
+    return ''.join(str(x) for x in digits[::-1])
+
+# Переводим результат в систему счисления с основанием 6
+base_6_result = to_base_6(result)
+
+# Подсчёт цифр 5
+count_5 = base_6_result.count('5')
+print(count_5, base_6_result)
