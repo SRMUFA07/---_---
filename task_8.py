@@ -85,6 +85,36 @@
 # АААДА
 # …
 # Запишите слово, которое стоит на 330-м месте от начала списка.
+# from itertools import *
+# print([i for i in product(sorted('адмт'), repeat=5)][329])
 
-from itertools import *
-print([i for i in product(sorted('адмт'), repeat=5)][329])
+
+# Определите количество 12-ричных пятизначных чисел, в записи которых ровно однa цифра 7
+# и не более трёх цифр с числовым значением, превышающим 8.
+
+def convert_to(number, base):
+    digits = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    if base > len(digits): return None
+    result = ''
+    while number > 0:
+        result = digits[number % base] + result
+        number //= base
+    return result
+
+result = []
+
+for num in range(10000, 100000):
+    num_twelve = convert_to(num, 12)
+    num_twelve_str = str(num_twelve)
+
+    more_than_eight = 0
+    for i in num_twelve_str:
+        if i not in 'AB':
+            if int(i) > 8:
+                more_than_eight += 1
+
+    if num_twelve.count('7') == 1 and more_than_eight <= 3:
+        result.append(num)
+
+print(len(result))
+    

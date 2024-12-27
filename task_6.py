@@ -74,22 +74,64 @@
 # done()
 
 
+
 # Повтори 7 [Вперёд 4 Направо 90 Вперёд 3 Направо 90] 
-from turtle import * 
+# from turtle import * 
+# tracer(0)
+# screensize(2000, 2000)
+# left(90)
+# scale = 25
+
+# for i in range(7):
+#     forward(4 * scale)
+#     right(90)
+#     forward(3 * scale)
+#     right(90)
+
+# up()
+# for x in range(-50, 50):
+#     for y in range(-50, 50):
+#         goto(x*scale, y*scale)
+#         dot('red')
+# done()
+
+
+
+# Повтори 9 [Вперёд 22 Направо 90 Вперед 6 Направо 90]
+# Поднять хвост
+# Вперед 1 Направо 90 Вперёд 5 Налево 90
+# Опустить хвост
+# Повтори 9 [Вперёд 53 Направо 90 Вперёд 75 Направо 90]
+# Определите периметр области пересечения фигур, ограниченных заданным
+# алгоритмом линиями.
+from turtle import*
 tracer(0)
 screensize(2000, 2000)
-left(90)
 scale = 25
 
-for i in range(7):
-    forward(4 * scale)
-    right(90)
-    forward(3 * scale)
-    right(90)
+left(90)
+down()
 
+for i in range(9):
+    forward(22 * scale)
+    right(90)
+    forward(6 * scale)
+    right(90)
 up()
+forward(1 * scale)
+right(90)
+forward(5 * scale)
+left(90)
+down()
+for i in range(9):
+    forward(53 * scale)
+    right(90)
+    forward(75 * scale)
+    right(90)
+up()
+
 for x in range(-50, 50):
     for y in range(-50, 50):
-        goto(x*scale, y*scale)
+        goto(x * scale, y * scale)
         dot('red')
 done()
