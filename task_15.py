@@ -1,12 +1,12 @@
 # В1 числовая прямая
-A = set()
-def f(x, A):
-    return ((x in A) <= (x**2 <= 81)) and ((x**2 <= 36) <= (x in A))
+# A = set()
+# def f(x, A):
+#     return ((x in A) <= (x**2 <= 81)) and ((x**2 <= 36) <= (x in A))
 
-for x in range(-1000,1000):
-    if not f(x,A):
-        A.add(x)
-print(len(A) - 1)
+# for x in range(-1000,1000):
+#     if not f(x,A):
+#         A.add(x)
+# print(len(A) - 1)
 
 
 
@@ -77,15 +77,32 @@ print(len(A) - 1)
 #         break
 
 
-def f(x, y, A):
-    return (x + 2*y > 16) or (x + y <= A)
-for A in range (300):
-    flag = True
-    for x in range (300):
-        for y in range (300):
-            if not f(x, y, A):
-                flag = False
-                break
-    if flag:
+# №5
+# def f(x, y, A):
+#     return (x + 2*y > 16) or (x + y <= A)
+# for A in range (300):
+#     flag = True
+#     for x in range (300):
+#         for y in range (300):
+#             if not f(x, y, A):
+#                 flag = False
+#                 break
+#     if flag:
+#         print(A)
+#         break
+
+
+
+# №6 Для какого наибольшего целого неотрицательного числа A выражение
+# (x > A) ∨ (y > x) ∨ (2y + x < 110)
+# тождественно истинно, то есть принимает значение 1 при любых целых неотрицательных x и y?
+
+for A in range(300, -1, -1):
+    k = 0 
+    for x in range(300):
+        for y in range(300):
+            if (x > A) or (y > x) or (2 * y + x < 110):
+                k += 1
+    if k == 300**2:
         print(A)
         break
