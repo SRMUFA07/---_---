@@ -77,44 +77,63 @@
 
 
 
-# Из букв А, Д, М, Т составили всевозможные 5-буквенные слова. Полученные слова записали в алфавитном порядке.
-# ААААА
-# ААААД
-# ААААМ
-# ААААТ
-# АААДА
-# …
-# Запишите слово, которое стоит на 330-м месте от начала списка.
+# Из букв А, Д, М, Т составили всевозможные 5-буквенные слова. Полученные слова записали в алфавитном порядке. Запишите слово, которое стоит на 330-м месте от начала списка.
 # from itertools import *
 # print([i for i in product(sorted('адмт'), repeat=5)][329])
 
 
+
 # Определите количество 12-ричных пятизначных чисел, в записи которых ровно однa цифра 7
 # и не более трёх цифр с числовым значением, превышающим 8.
+# def convert_to(number, base):
+#     digits = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+#     if base > len(digits): return None
+#     result = ''
+#     while number > 0:
+#         result = digits[number % base] + result
+#         number //= base
+#     return result
 
-def convert_to(number, base):
-    digits = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    if base > len(digits): return None
-    result = ''
-    while number > 0:
-        result = digits[number % base] + result
-        number //= base
-    return result
+# result = []
+# for num in range(10000, 100000):
+#     num_twelve = convert_to(num, 12)
+#     num_twelve_str = str(num_twelve)
 
-result = []
+#     more_than_eight = 0
+#     for i in num_twelve_str:
+#         if i not in 'AB':
+#             if int(i) > 8:
+#                 more_than_eight += 1
+#     if num_twelve.count('7') == 1 and more_than_eight <= 3:
+#         result.append(num)
+# print(len(result))
 
-for num in range(10000, 100000):
-    num_twelve = convert_to(num, 12)
-    num_twelve_str = str(num_twelve)
 
-    more_than_eight = 0
-    for i in num_twelve_str:
-        if i not in 'AB':
-            if int(i) > 8:
-                more_than_eight += 1
 
-    if num_twelve.count('7') == 1 and more_than_eight <= 3:
-        result.append(num)
+# Составляют 5-⁠буквенные слова из букв слова ПЯТНИЦА. Найти количество слов, которые не начинаются с Н и в которых есть только одна буква Я. Буквы в слове могут повторяться.
+# from itertools import*
+# count = 0
+# for i in product('ПЯТНИЦА', repeat=5):
+#     if i[0] != 'Н' and i.count('Я') == 1:
+#         count += 1
+# print(count)
 
-print(len(result))
+
+
+# Все 5-⁠буквенные слова, составленные из букв А, К, Р, У, записаны в алфавитном порядке. Запишите слово, которое стоит на 150-⁠м месте от начала списка.
+# from itertools import*
+# print([i for i in product(sorted("АКРУ"), repeat=5)][149])
+
+
+
+# Олег составляет таблицу кодовых слов для передачи сообщений, каждому сообщению соответствует своё кодовое слово. 
+# В качестве кодовых слов Олег использует 4-⁠буквенные слова, в которых есть только буквы A, B, C, D, E, X, Z, причём буквы X и Z встречаются только на двух первых позициях, 
+# а буквы A, B, C, D, E  — только на двух последних. Сколько различных кодовых слов может использовать Олег?
+from itertools import*
+count = 0
+for i in product('ABCDEXZ', repeat=4):
+    if (i[0] in 'XZ' and i[1] in 'XZ') and (i[2] in 'ABCDE' and i[3] in 'ABCDE'):
+        count += 1
+print(count)
+
     
