@@ -107,11 +107,60 @@
 # print(F(6))
 
 
+# №11
+# def F(n):
+#     if n==1: 
+#         return 1
+#     if n==2:
+#         return 2
+#     if n>2:
+#         return 3 * F(n-1) - F(n-2)
+# print(F(8))
+
+
+
+
+# №12
+# F(1)  =  1;
+# F(2)  =  2;
+# F(3)  =  3;
+# F(n)  =  F(n − 3) · n при n > 3.
+# Чему равно значение функции F(10)?
+# def F(n):
+#     if n == 1:
+#         return 1
+#     if n == 2:
+#         return 2
+#     if n == 3:
+#         return 3
+#     if n > 3:
+#         return F(n - 3) * n
+# print(F(10))
+
+
+
+# №13 
+# F(n)  =  n при n ≤ 2;
+# F(n)  =  F(n − 1) + 3 · F(n − 2) при n > 2.
+# Чему равно значение функции F(6)?
+# def F(n):
+#     if n <= 2:
+#         return n
+#     if n > 2:
+#         return F(n-1)+3 * F(n-2)
+# print(F(6))
+
+
+
+# №14
+# F(n)  =  n, при n < 11;
+# F(n)  =  n + F(n − 1), если n ≥ 11.
+# Чему равно значение выражения F(2024) − F(2021)?
+import sys
+sys.setrecursionlimit(10**5)
 def F(n):
-    if n==1: 
-        return 1
-    if n==2:
-        return 2
-    if n>2:
-        return 3 * F(n-1) - F(n-2)
-print(F(8))
+    if n < 11:
+        return n
+    if n >= 11:
+        return n + F(n-1)
+print(F(2024) - F(2021))
