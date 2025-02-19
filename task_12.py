@@ -261,16 +261,135 @@
 # КОНЕЦ
 # Известно, что в исходной строке A было ровно два нуля  — на первом и на последнем месте, а после выполнения данной программы получилась строка B, 
 # содержащая 340 единиц, 849 двоек и 151 тройку. Какое наибольшее количество двоек могло быть в строке A?
-result = []
-for a in range(1, 1000):
-    for b in range(1, 1000):
-        for c in range(1, 1000):
-            num = '0' + '1'*a + '2'*b + '3'*c + '0'
-            while '00' not in num:
-                num = num.replace('033', '1302', 1)
-                num = num.replace('03', '120', 1)
-                num = num.replace('023', '203', 1)
-                num = num.replace('02', '20', 1)
-            if (num.count('1') == 340) and (num.count('2') == 849) and (num.count('3') == 151):
-                result.append(b)
-print(max(result))
+# result = []
+# for a in range(1, 1000):
+#     for b in range(1, 1000):
+#         for c in range(1, 1000):
+#             num = '0' + '1'*a + '2'*b + '3'*c + '0'
+#             while '00' not in num:
+#                 num = num.replace('033', '1302', 1)
+#                 num = num.replace('03', '120', 1)
+#                 num = num.replace('023', '203', 1)
+#                 num = num.replace('02', '20', 1)
+#             if (num.count('1') == 340) and (num.count('2') == 849) and (num.count('3') == 151):
+#                 result.append(b)
+# print(max(result))
+
+
+# 2022_1
+# num = '9' * 84
+# while '33333' in num or '999' in num:
+#     if '33333' in num:
+#         num = num.replace('33333', '99', 1)
+#     else:
+#         num = num.replace('999', '3', 1)
+# print(num)
+
+# 2022_2
+# num = '9' * 96
+# while '22222' in num or '9999' in num:
+#     if '22222' in num:
+#         num = num.replace('22222', '99', 1)
+#     else:
+#         num = num.replace('9999', '2', 1)
+# print(num)
+
+# 2023_1
+# maxi = 0
+# for two in range(4, 10000):
+#     num = '1' + '2' * two
+#     while '12' in num or '322' in num or '222' in num:
+#         if '12' in num:
+#             num = num.replace('12', '2', 1)
+#         if '322' in num:
+#             num = num.replace('322', '21', 1)
+#         if '222' in num:
+#             num = num.replace('222', '3', 1)
+#     summ = 0
+#     for i in num:
+#         summ += int(i)
+#     maxi = max(maxi, summ)
+# print(maxi)
+
+# 2023_2
+# for n in range(4, 10000):
+#     num = '5' + '2' * n
+#     while '72' in num or '522' in num or '2222' in num:
+#         if '72' in num:
+#             num = num.replace('72', '2', 1)
+#         if '522' in num:
+#             num = num.replace('522', '27', 1)
+#         if '2222' in num:
+#             num = num.replace('2222', '5', 1)
+#
+#     sum_digit = 0
+#     for digit in num:
+#         sum_digit += int(digit)
+#     if sum_digit == 63:
+#         print(n)
+#         break
+
+# 2023_3
+# for n in range(4, 10000):
+#     num = '1' + '8' * n
+#     while '18' in num or '388' in num or '888' in num:
+#         if '18' in num:
+#             num = num.replace('18', '8', 1)
+#         if '388' in num:
+#             num = num.replace('388', '81', 1)
+#         if '888' in num:
+#             num = num.replace('888', '3', 1)
+#
+#     if num.count('1') == 3:
+#         print(n)
+#         break
+
+
+# 2024_1
+# num = '9' * 100
+# while '33333' in num or '999' in num:
+#     if '33333' in num:
+#         num = num.replace('33333', '99', 1)
+#     else:
+#         num = num.replace('999', '3', 1)
+# print(num)
+
+
+# 2024_2
+# num = '7' * 108
+# while '33333' in num or '777' in num:
+#     if '33333' in num:
+#         num = num.replace('33333', '7', 1)
+#     else:
+#         num = num.replace('777', '3', 1)
+# print(num)
+
+
+# 2024_3
+# num = '8' * 83
+# while '111' in num or '88888' in num:
+#     if '111' in num:
+#         num = num.replace('111', '88', 1)
+#     else:
+#         num = num.replace('88888', '8', 1)
+# print(num)
+
+
+# 2024_4
+# num = '9' * 136
+# while '22222' in num or '9999' in num:
+#     if '22222' in num:
+#         num = num.replace('22222', '99', 1)
+#     else:
+#         num = num.replace('9999', '2', 1)
+# print(num)
+
+
+# 2024_5
+num = '9' * 81
+while '33333' in num or '999' in num:
+    if '33333' in num:
+        num = num.replace('33333', '99', 1)
+    else:
+        num = num.replace('999', '3', 1)
+print(num)
