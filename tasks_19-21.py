@@ -15,17 +15,42 @@
 # – у Вани есть выигрышная стратегия, позволяющая ему выиграть первым или вторым ходом при любой игре Пети;
 # – у Вани нет стратегии, которая позволит ему гарантированно выиграть первым ходом.    
 
+# def f(a, b, m): # a - первая куча   b - вторая куча   m - ходы
+#     if a+b >= 259: # условие победы, игра закончена
+#         return m % 2 == 0 # эта строчка всегда есть
+#     if m == 0: # если m==0 и мы не выполнили условие, возвращаю 0, игра не результативная 
+#         return 0
+#     h = [f(a+1, b, m-1), f(a, b+1, m-1), f(a*2, b, m-1), f(a, b*2, m-1)] # все возможные ходы. m-1 потому-что -1 ход
+#     return any(h) if m % 2 != 0 else all(h) # чтобы получить ответ на 19, меняем all на any
+# # all на any меняем только если такое условие: после неудачного первого хода
 
-def f(a, b, m): # a - первая куча   b - вторая куча   m - ходы
-    if a+b >= 259: # условие победы, игра закончена
-        return m % 2 == 0
-    if m == 0: # если m==0 и мы не выполнили условие, возвращаю 0, игра не результативная 
-        return 0
-    h = [f(a+1, b, m-1), f(a, b+1, m-1), f(a*2, b, m-1), f(a, b*2, m-1)] # все возможные ходы
-    return any(h) if m % 2 != 0 else all(h) # чтобы получить ответ на 19, меняем all на any
-# all на any меняем только если такое условие: после неудачного первого хода
+# print('19)', [s for s in range(1, 242) if f(17, s, 2)]) # тут по условию 19
+# print('20)', [s for s in range(1, 242) if not f(17, s, 1) and f(17, s, 3)]) # условие 20
+# print('21)', [s for s in range(1, 242) if not f(17, s, 2) and f(17, s, 4)]) # условие 21
 
 
-print('19)', [s for s in range(1, 242) if f(17, s, 2)]) # тут по условию 19
-print('20)', [s for s in range(1, 242) if not f(17, s, 1) and f(17, s, 3)]) # условие 20
-print('21)', [s for s in range(1, 242) if not f(17, s, 2) and f(17, s, 4)]) # условие 21
+
+
+# 106)	(ЕГЭ-2022) 
+# def f(s, m):
+#     if s >= 165: return m % 2 == 0
+#     if m == 0: return 0
+#     h = [f(s+1, m-1), f(s*2, m-1)]
+#     return any(h) if m % 2 != 0 else all(h)
+
+# print('19)', [s for s in range(1, 165) if not f(s, 1) and f(s, 2)])
+# print('20)', [s for s in range(1, 165) if not f(s, 1) and f(s, 3)])
+# print('21)', [s for s in range(1, 165) if not f(s, 2) and f(s, 4)])
+
+
+# 125)	(ЕГЭ-2023)
+def f(s, m):
+    if s >= 88: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s+1, m-1), f(s+4, m-1), f(s*3, m-1)]
+    return any(h) if m % 2 != 0 else all(h)
+
+print('19)', [s for s in range(1, 88) if not f(s, 1) and f(s, 2)])
+print('20)', [s for s in range(1, 88) if not f(s, 1) and f(s, 3)])
+print('21)', [s for s in range(1, 88) if not f(s, 2) and f(s, 4)])
+
