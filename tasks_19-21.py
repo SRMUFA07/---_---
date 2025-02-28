@@ -44,13 +44,90 @@
 
 
 # 125)	(ЕГЭ-2023)
-def f(s, m):
-    if s >= 88: return m % 2 == 0
+# def f(s, m):
+#     if s >= 88: return m % 2 == 0
+#     if m == 0: return 0
+#     h = [f(s+1, m-1), f(s+4, m-1), f(s*3, m-1)]
+#     return any(h) if m % 2 != 0 else all(h)
+
+# print('19)', [s for s in range(1, 88) if not f(s, 1) and f(s, 2)])
+# print('20)', [s for s in range(1, 88) if not f(s, 1) and f(s, 3)])
+# print('21)', [s for s in range(1, 88) if not f(s, 2) and f(s, 4)])
+
+
+
+# 126)	(ЕГЭ-2023) 
+# def f(s, m):
+#     if s >= 59: return m % 2 == 0
+#     if m == 0: return 0
+#     h = [f(s+1, m-1), f(s+3, m-1), f(s*4, m-1)]
+#     return any(h) if m % 2 != 0 else all(h)
+
+# print('19)', [s for s in range(1, 59) if not f(s, 1) and f(s, 2)])
+# print('20)', [s for s in range(1, 59) if not f(s, 1) and f(s, 3)])
+# print('21)', [s for s in range(1, 59) if not f(s, 2) and f(s, 4)])
+
+
+
+# 127)	(ЕГЭ-2023) 
+# def f(s, m):
+#     if s >= 111: return m % 2 == 0
+#     if m == 0: return 0
+#     h = [f(s+1, m-1), f(s+3, m-1), f(s*4, m-1)]
+#     return any(h) if m % 2 != 0 else all(h)
+
+# print('19)', [s for s in range(1, 111) if not f(s, 1) and f(s, 2)])
+# print('20)', [s for s in range(1, 111) if not f(s, 1) and f(s, 3)])
+# print('21)', [s for s in range(1, 111) if not f(s, 2) and f(s, 4)])
+
+
+
+# 136)	(ЕГЭ-2024) 
+# def f(a, b, m):
+#     if a + b >= 65: return m % 2 == 0
+#     if m == 0: return 0
+#     h = [f(a+1, b, m-1), f(a*3, b, m-1), f(a, b+1, m-1), f(a, b*3, m-1)]
+#     return any(h) if m % 2 != 0 else all(h) # any в 19 ответ 7
+
+# print('19)', [s for s in range(1, 59) if f(6, s, 2)])
+# print('20)', [s for s in range(1, 59) if not f(6, s, 1) and f(6, s, 3)])
+# print('21)', [s for s in range(1, 59) if not f(6, s, 2) and f(6, s, 4)])
+
+
+
+# 137)	(ЕГЭ-2024) 
+# def f(s, m):
+#     if s >= 58: return m % 2 == 0
+#     if m == 0: return 0
+#     h = [f(s+1, m-1), f(s+4, m-1), f(s*2, m-1)]
+#     return any(h) if m % 2 != 0 else all(h)
+
+# print('19)', [s for s in range(1, 58) if not f(s, 1) and f(s, 2)])
+# print('20)', [s for s in range(1, 58) if not f(s, 1) and f(s, 3)])
+# print('21)', [s for s in range(1, 58) if not f(s, 2) and f(s, 4)])
+
+
+
+# 138)	(ЕГЭ-2024) 
+# def f(s, m):
+#     if s >= 39: return m % 2 == 0
+#     if m == 0: return 0
+#     h = [f(s+1, m-1), f(s+3, m-1), f(s*2, m-1)]
+#     return any(h) if m % 2 != 0 else all(h)
+
+# print('19)', [s for s in range(1, 39) if not f(s, 1) and f(s, 2)])
+# print('20)', [s for s in range(1, 39) if not f(s, 1) and f(s, 3)])
+# print('21)', [s for s in range(1, 39) if not f(s, 2) and f(s, 4)])
+
+
+
+# 139)	(ЕГЭ-2024) 
+def f(a, b, m):
+    if a + b >= 227: return m % 2 == 0
     if m == 0: return 0
-    h = [f(s+1, m-1), f(s+4, m-1), f(s*3, m-1)]
-    return any(h) if m % 2 != 0 else all(h)
+    h = [f(a+1, b, m-1), f(a*2, b, m-1), f(a, b+1, m-1), f(a, b*2, m-1)]
+    return any(h) if m % 2 != 0 else all(h) # any в 19 ответ 53
 
-print('19)', [s for s in range(1, 88) if not f(s, 1) and f(s, 2)])
-print('20)', [s for s in range(1, 88) if not f(s, 1) and f(s, 3)])
-print('21)', [s for s in range(1, 88) if not f(s, 2) and f(s, 4)])
-
+print('19', [s for s in range(1, 210) if f(17, s, 2)])
+print('20', [s for s in range(1, 210) if not f(17, s, 1) and f(17, s, 3)])
+print('21', [s for s in range(1, 210) if not f(17, s, 2) and f(17, s, 4)])
