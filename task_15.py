@@ -144,15 +144,112 @@
 
 
 # №9
-def f(x, A):
-    return ((x & 35 != 0) or (x & 22 != 0)) <= ((x & 15 == 0) <= (x & A != 0))
+# def f(x, A):
+#     return ((x & 35 != 0) or (x & 22 != 0)) <= ((x & 15 == 0) <= (x & A != 0))
 
-for A in range(300):
-    flag = True
-    for x in range(300):
-        if not f(x, A):
-            flag = False
-            break
-    if flag:
-        print(A)
-        break
+# for A in range(300):
+#     flag = True
+#     for x in range(300):
+#         if not f(x, A):
+#             flag = False
+#             break
+#     if flag:
+#         print(A)
+#         break
+
+
+
+# 506)	(ЕГЭ-2022) 
+# def f(x, y, A):
+#     return (x + y <= 22) or (y <= x - 6) or (y >= A)
+
+# res = []
+# for A in range(300): 
+#     flag = True
+#     for x in range(300):
+#         for y in range(300):
+#             if not f(x, y, A):
+#                 flag = False
+#                 break
+#     if flag:
+#         res.append(A)
+# print(max(res))
+
+
+
+# 507)	(ЕГЭ-2022) 
+# def f(x, A):
+#     return ((x % 2 == 0) <= (x % 3 != 0)) or (x + A >= 80)
+
+# for A in range(1, 300):
+#     flag = True
+#     for x in range(1, 300):
+#         if not f(x, A):
+#             flag = False
+#             break
+#     if flag: 
+#         print(A)
+#         break
+
+
+
+# 542)	(ЕГЭ-2023) 
+# def f(x, y, A):
+#     return (x < A) or (y < A) or (x + 2*y > 50)
+
+# for A in range(300):
+#     flag = True
+#     for x in range(300):
+#         for y in range(300):
+#             if not f(x, y, A):
+#                 flag = False
+#                 break
+#     if flag:
+#         print(A)
+#         break
+
+
+
+# 543)	(ЕГЭ-2023) 
+# def f(x, y, A):
+#     return (x*y < A) or (x < y) or (9 < x)
+
+# for A in range(300):
+#     flag = True
+#     for x in range(300):
+#         for y in range(300):
+#             if not f(x, y, A):
+#                 flag = False
+#                 break
+#     if flag:
+#         print(A)
+#         break
+
+
+
+# 544)	(ЕГЭ-2023) 
+# def f(x, y, A):
+#     return (x + 2*y > A) or (y < x) or (x < 30)
+
+# res = []
+# for A in range(300):
+#     flag = True
+#     for x in range(300):
+#         for y in range(300): 
+#             if not f(x, y, A):
+#                 flag = False
+#                 break
+#     if flag:
+#         res.append(A)
+# print(max(res))
+
+
+
+# 564)	(ЕГЭ-2024) 
+P = list(range(15, 41))
+Q = list(range(21, 64))
+A = []
+for x in range(1, 300):
+    if ((x in P) <= (((x in Q) and (x not in A)) <= (x not in P))) == False:
+        A.append(x)
+print(A[-1]-A[0])
